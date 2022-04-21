@@ -12,29 +12,5 @@ def display_letters(guess,secret_word, results):
     
     print(results)
 
-or 
-
-
-def main():
-    # call func to disply letters
-    sofar = ''
-    sofar += display_letters(guess,sofar, results)
-    
-    
-
-#function to display letters used so far
-
-def display_letters(guess, sofar, results):
-
-    # add letters used to a string 
-    letters = ''
-    for x in guess:
-        if x not in sofar:
-            letters += x
-    #print(letters)
-    # pirnt results
-    print(results)
-    return letters
-        
 
    
