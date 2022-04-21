@@ -12,3 +12,6 @@ def display_letters(guess,secret_word, results):
 
     # pirnt summary
     print(results)
+    
+    
+sorry it took so long
