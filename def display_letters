@@ -1,0 +1,14 @@
+# function's--Ez Racancoj
+
+def display_letters(guess,secret_word, results):
+    # initialize an empty string
+    letters = ''
+
+    # add the letters use in to the string 
+    for x in guess:
+        letters += x
+    # print letters used
+    print(letters)
+
+    # pirnt summary
+    print(results)
