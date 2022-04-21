@@ -11,6 +11,3 @@ def display_letters(guess,secret_word, results):
     # pirnt results
     
     print(results)
-
-
-   
