@@ -1,0 +1,119 @@
+def main():
+    # open txt file and append all values from eldrow_words.txt in to a list
+    with open('eldrow_words.txt', 'r') as f:
+        word_list = [line.strip() for line in f]
+    # remove the coments form the list
+    del word_list[0:4]
+
+    # pirnt list form testing
+    print(word_list)
+
+    #import ramdom
+    import random
+   
+    # get secret word
+    secret_word = random.choice(word_list)
+
+    # print secret word for testing
+    print(secret_word)
+
+    # get user input
+    guess = 'hello'
+    
+
+    results = compare_words(guess, secret_word)
+
+    # call func to disply letters
+    sofar = ''
+    sofar += display_letters(guess,sofar, results)
+    #color_text(guess, secret_word, results)
+    print(sofar)
+    color_text(guess, secret_word, results)
+   
+   
+   
+    return guess, word_list
+
+
+def valid_word(guess, word_list):
+   
+    if guess not in word_list:
+        print('Invalid word. Try again.')
+       
+        main()
+def compare_words(guess, secret_word):
+    results = ''
+   
+    for i in range(len(guess)):
+       
+        if guess[i] == secret_word[i]:
+            results += '$'
+       
+        elif guess[i] in secret_word:
+            results += '>'
+       
+        else:
+            results += 'x'
+
+    '''
+    for i in range(len(results)):
+        print(results[i], end = ' ')
+
+   
+    print()
+
+   
+    for i in range(len(guess)):
+        print(guess[i].upper(), end = ' ')
+    '''
+
+    return results
+
+
+'''compare_words('jumps', 'jaunt')'''
+
+
+
+
+
+#function to display letters used so far
+
+def display_letters(guess, sofar, results):
+
+    # add letters used to a string 
+    letters = ''
+    for x in guess:
+        if x not in sofar:
+            letters += x
+    #print(letters)
+    # pirnt results
+    print(results)
+    print(letters)
+    return letters
+    
+   
+   
+# function for printing color text
+def color_text(guess, secret_word, results):
+    # import colorama
+    import colorama
+    # import format
+    from colorama import Fore, Back, Style
+
+    for x in results:
+        if x == '$':
+            print(Back.RED + '')
+            print(results)
+    
+    
+            
+        
+
+
+'''
+function to display a final summary after
+a correct word guess or failure
+may need to use a list
+'''
+
+main()
